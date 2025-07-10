@@ -1,0 +1,27 @@
+// tsconfig.build.json
+{
+    // 
+    "extends": "./tsconfig.json",
+    // "include": ["src/components"],
+    "include": ["src", "shims-vue.d.ts"],
+    "exclude": ["docs", "node_modules", "dist"],
+    "compilerOptions": {
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "outDir": "dist/types",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@docs/*":["docs/*"],
+            "@demos/*":["demos/*"],
+            "@components/*":["components/*"],
+        },
+        "module": "ESNext",
+        "target": "ESNext",
+        "moduleResolution": "Node",
+        "jsx": "preserve",
+        "esModuleInterop": true,
+        "strict": true,
+        "skipLibCheck": true
+    }
+}
