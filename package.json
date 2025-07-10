@@ -1,0 +1,36 @@
+{
+  "name": "my-ui-library",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/my-ui.umd.js",
+  "module": "dist/my-ui.es.js",
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "build:lib": "vite build --config vite.config.build.ts",
+    "build": "vite build --config vite.config.build.ts",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types"
+  },
+  "dependencies": {
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/tsconfig": "^0.7.0",
+    "rollup": "^4.44.2",
+    "rollup-plugin-css-only": "^4.5.2",
+    "rollup-plugin-dts": "^6.2.1",
+    "sass": "^1.89.2",
+    "typescript": "~5.8.3",
+    "unplugin-vue-components": "^28.8.0",
+    "vite": "^7.0.3",
+    "vitepress": "^1.6.3",
+    "vue-tsc": "^2.2.10"
+  }
+}
