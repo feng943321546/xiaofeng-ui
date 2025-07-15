@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> b7363b15676ea77df50656774281813ac2cad632
 <template>
     <div>
         <a href="https://vite.dev" target="_blank">
@@ -24,16 +19,8 @@
         <yf-alert type="warning">警告提示</yf-alert>
         <yf-alert type="error">错误提示</yf-alert>
     </div>
-<<<<<<< HEAD
 </template>
 <script setup lang="ts"></script>
-=======
-    <HelloWorld msg="Vite + Vue" />
-</template>
-<script setup lang="ts">
-    import HelloWorld from "./HelloWorld.vue";
-</script>
->>>>>>> b7363b15676ea77df50656774281813ac2cad632
 <!-- <script lang="ts" setup> 
     // import { ref } from "vue";
 

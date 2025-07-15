@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-=======
-```vue
->>>>>>> b7363b15676ea77df50656774281813ac2cad632
 <template>
     <yf-alert type="success">成功提示</yf-alert>
     <yf-alert type="info">信息提示</yf-alert>
     <yf-alert type="warning">警告提示</yf-alert>
     <yf-alert type="error">错误提示</yf-alert>
 </template>
-<<<<<<< HEAD
-=======
-```
->>>>>>> b7363b15676ea77df50656774281813ac2cad632
 
 <script setup lang="ts">
     import { ref } from "vue";
