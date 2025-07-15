@@ -5,7 +5,10 @@
 </template>
 
 <script lang="ts" setup>
-// import { defineProps, defineEmits } from 'vue'
+// 定义组件名称
+defineOptions({
+  name: 'YfButton'
+})
 
 // ✅ 使用类型声明 props
 const props = defineProps<{

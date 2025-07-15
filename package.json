@@ -1,20 +1,70 @@
 {
-  "name": "my-ui-library",
-  "private": true,
+  "name": "my-ui-xiaofeng",
   "version": "1.0.0",
+  "description": "A Vue 3 UI component library built with TypeScript",
   "type": "module",
-  "main": "dist/my-ui.umd.js",
-  "module": "dist/my-ui.es.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/entry-types/index.d.ts",
   "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "vue3",
+    "ui",
+    "components",
+    "typescript"
+  ],
+  "author": "XiaoFeng <943321546@qq.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feng943321546/my-ui-library.git"
+  },
+  "homepage": "https://github.com/feng943321546/my-ui-library#readme",
+  "bugs": {
+    "url": "https://github.com/feng943321546/my-ui-library/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/entry-types/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./style": {
+      "import": "./dist/style/index.css"
+    },
+    "./components/*": {
+      "import": "./dist/es/components/*.js",
+      "types": "./dist/entry-types/components/*.d.ts"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "build:lib": "vite build --config vite.config.build.ts",
-    "build": "vite build --config vite.config.build.ts",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types"
+    "docs:deploy": "npm run docs:build && gh-pages -d dist/docs",
+    "clean": "rimraf dist",
+    "gen:style": "node scripts/gen-style-entry.cjs",
+    "gen:entry": "node scripts/gen-entry.cjs",
+    "build:main": "vite build --config vite.config.main.ts",
+    "build:types": "vue-tsc --project tsconfig.build.json",
+    "build:esm": "vite build --config vite.config.esm.ts",
+    "build:lib": "vite build --config vite.config.lib.ts",
+    "build:dts": "vite build --config vite.config.dts.ts",
+    "build:style": "npm run gen:style && vite build --config vite.config.style.ts",
+    "build:entry": "vite build --config vite.config.entry.ts",
+    "copy:types": "cpx \"dist/entry-types/index.d.ts\" dist/",
+    "build": "npm run clean && npm run gen:entry && npm run build:main && npm run build:types && npm run build:esm && npm run build:lib && npm run build:style && npm run build:dts && npm run copy:types && npm run build:entry",
+    "prepublishOnly": "npm run build",
+    "publish:npm": "npm publish"
   },
   "dependencies": {
     "vue": "^3.5.17"
@@ -23,6 +73,10 @@
     "@types/node": "^24.0.10",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
+    "cpx": "^1.5.0",
+    "fast-glob": "^3.3.3",
+    "gh-pages": "^6.3.0",
+    "rimraf": "^6.0.1",
     "rollup": "^4.44.2",
     "rollup-plugin-css-only": "^4.5.2",
     "rollup-plugin-dts": "^6.2.1",

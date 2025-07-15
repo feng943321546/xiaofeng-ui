@@ -38,9 +38,44 @@
 
 发布到 NPM 或私有服务器
 
+npm login    # 登录你的 npm 账户（只需一次）
+npm publish  # 发布当前版本
 
-切换淘宝源（临时或永久）  淘宝镜像由阿里维护，速度快很多
+## 📈 继续开发计划建议：
+### 阶段七：完善组件库架构
+
+✅ 支持主题切换
+
+✅ 支持 icon 图标库集成
+
+✅ 支持 dark/light 模式
+
+### 阶段八：增加核心通用组件
+
+Button、Input、Select、Form、Table、Modal、Tabs、Message...
+
+### 阶段九：完善文档系统
+
+增加组件 props 表格自动展示
+
+使用 Markdown + 自定义组件演示
+
+### 阶段十：测试 + CI
+
+使用 Vitest 写单元测试
+
+GitHub Actions 自动部署文档 & npm 发布检查
+
+
+### 切换淘宝源（临时或永久）  淘宝镜像由阿里维护，速度快很多
 npm config set registry https://registry.npmmirror.com
+
+现在用的npm源： https://registry.npmmirror.com
+
+运行这个命令改回官方源：npm config set registry https://registry.npmjs.org/
+
+
+### 插件使用安装
 
 npm install -D vitepress
 
@@ -62,3 +97,22 @@ bash
 复制
 编辑
 npm install -D rollup-plugin-dts typescript
+
+
+
+🧠 Bonus（可选）：自动扫描组件样式并自动生成 style/index.ts
+如果你后期组件变多，我可以教你用 Node.js 脚本自动扫描 components/*/style/index.scss 自动生成 src/style/index.ts，你将完全不需要手动维护。
+npm install fast-glob -D
+
+
+你需要安装 ts-node 支持运行 TypeScript 脚本：
+npm install ts-node -D
+
+
+
+每个组件都可以单独打包输出为一个入口模块（ESM + CommonJS），并自动生成样式引入。
+import { YfButton } from 'my-ui-library'
+import 'my-ui-library/es/components/yf-button/style/index.css'
+
+按需引入
+import YfButton from 'my-ui-library/es/components/yf-button'

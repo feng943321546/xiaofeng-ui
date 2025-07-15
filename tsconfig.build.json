@@ -1,27 +1,31 @@
 // tsconfig.build.json
 {
-    // 
+    //
     "extends": "./tsconfig.json",
     // "include": ["src/components"],
     "include": ["src", "shims-vue.d.ts"],
+    // "exclude": ["docs", "node_modules", "dist", "src/components"],
     "exclude": ["docs", "node_modules", "dist"],
     "compilerOptions": {
-        "declaration": true,
-        "emitDeclarationOnly": true,
-        "outDir": "dist/types",
-        "baseUrl": ".",
+        "outDir": "dist/types", // 类型文件输出目录
+        "declaration": true, // 生成 .d.ts 类型文件
+        "declarationDir": "dist/types",
+        "emitDeclarationOnly": true, // 只生成类型，不输出 JS
+        "baseUrl": ".", // 支持路径别名
         "paths": {
             "@/*": ["src/*"],
-            "@docs/*":["docs/*"],
-            "@demos/*":["demos/*"],
-            "@components/*":["components/*"],
+            "@docs/*": ["docs/*"],
+            "@demos/*": ["demos/*"],
+            "@components/*": ["components/*"]
         },
         "module": "ESNext",
-        "target": "ESNext",
+        "target": "ESNext", // 编译目标
         "moduleResolution": "Node",
         "jsx": "preserve",
         "esModuleInterop": true,
         "strict": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "types": ["node"]
     }
 }

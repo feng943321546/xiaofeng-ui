@@ -38,7 +38,7 @@ export default defineConfig({
     },
     // ✅ 将 demo 映射为可 fetch 的路径（重要）
     // 这里的 publicDir 是 Vite 的默认配置，指向项目根目录下的 public 文件夹
-    publicDir: "public", // 仍保留原样（如果你使用 public 文件）
+    // publicDir: "public", // 仍保留原样（如果你使用 public 文件）
     server: {
         fs: {
             allow: [
@@ -52,7 +52,7 @@ export default defineConfig({
 
     build: {
         lib: {
-            entry: path.resolve(__dirname, "src/index.ts"), // 整库入口
+            entry: path.resolve(__dirname, "src/components/index.ts"), // 整库入口
             // entry: path.resolve(__dirname, "src/components/index.ts"), // 整库入口
             name: "MyUIXiaoFeng", // 库名
             formats: ["es", "umd"],

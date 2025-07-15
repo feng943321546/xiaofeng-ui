@@ -6,6 +6,11 @@
 </template>
 
 <script lang="ts" setup>
+// 定义组件名称
+defineOptions({
+  name: 'YfAlert'
+})
+
 const props = defineProps<{
   type?: 'success' | 'warning' | 'error' | 'info'
   message?: string

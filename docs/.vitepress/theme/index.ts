@@ -1,7 +1,7 @@
 // ✅ 注册组件
 import type { App } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import DemoBlock from '../../components/DemoBlock.vue'
+import DemoBlock from './DemoBlock.vue'
 // import YfButton from '@/components/yf-button/index' // 路径一定要对
 import YfButton from '../../../src/components/yf-button/index' // 路径一定要对
 import YfAlert from '../../../src/components/yf-alert/index' // 路径一定要对
