@@ -10,8 +10,8 @@ export default defineConfig({
         outDir: "dist/style",
         emptyOutDir: false,
         lib: {
-            // entry: path.resolve(__dirname, "src/style/index.scss"),
-            entry: path.resolve(__dirname, "src/style/index.ts"),
+            entry: path.resolve(__dirname, "src/style/all.scss"),
+            // entry: path.resolve(__dirname, "src/style/index.ts"),
             name: "MyUIStyle",
             fileName: "index",
             formats: ["es"],

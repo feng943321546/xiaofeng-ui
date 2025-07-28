@@ -1,0 +1,28 @@
+@import "../../style/variables.scss";
+// @use '../../style/variables.scss' as *;
+
+.yf-input {
+  display: inline-block;
+  width: 100%;
+
+  &.is-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .yf-input__inner {
+    width: 100%;
+    padding: $--padding-base;
+    font-size: $--font-size-base;
+    border: 1px solid $--color-info;
+    border-radius: $--border-radius-base;
+    transition: $--transition-base;
+    outline: none;
+
+    &:focus {
+      border-color: $--color-primary;
+      box-shadow: 0 0 2px rgba($--color-primary, 0.2);
+    }
+  }
+}
+

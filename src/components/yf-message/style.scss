@@ -1,0 +1,84 @@
+@import "../../style/variables.scss";
+// @use '../../style/variables.scss' as *;
+
+.yf-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+    padding: $--padding-base;
+    border-radius: $--border-radius-base;
+    color: #fff;
+    box-shadow: $--box-shadow-base;
+    font-size: $--font-size-base;
+    transition: $--transition-base;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9900;
+    &.primary {
+        background-color: $--color-primary;
+        border: 1px solid $--color-primary;
+    }
+    &.danger {
+        background-color: $--color-danger;
+        border: 1px solid $--color-danger;
+    }
+    &.success {
+        background-color: $--color-success;
+        border: 1px solid $--color-success;
+    }
+    &.info {
+        background-color: $--color-info;
+        border: 1px solid $--color-info;
+    }
+    &.warning {
+        background-color: $--color-warning;
+        border: 1px solid $--color-warning;
+    }
+    &.error {
+        background-color: $--color-danger;
+        border: 1px solid $--color-danger;
+    }
+
+    &.plain {
+        color: inherit;
+        background-color: rgba(255, 255, 255, 0.8);
+        &.primary {
+            color: $--color-primary;
+            background-color: rgba($--color-primary, 0.1);
+            border: 1px solid $--color-primary;
+        }
+        &.danger {
+            color: $--color-danger;
+            background-color: rgba($--color-danger, 0.1);
+            border: 1px solid $--color-danger;
+        }
+        &.success {
+            color: $--color-success;
+            background-color: rgba($--color-success, 0.1);
+            border: 1px solid $--color-success;
+        }
+        &.info {
+            color: $--color-info;
+            background-color: rgba($--color-info, 0.1);
+            border: 1px solid $--color-info;
+        }
+        &.warning {
+            color: $--color-warning;
+            background-color: rgba($--color-warning, 0.1);
+            border: 1px solid $--color-warning;
+        }
+        &.error {
+            color: $--color-danger;
+            background-color: rgba($--color-danger, 0.1);
+            border: 1px solid $--color-danger;
+        }
+    }
+
+    .yf-message__close {
+        margin-left: 12px;
+        cursor: pointer;
+    }
+}

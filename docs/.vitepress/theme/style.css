@@ -1,0 +1,8 @@
+/* 隐藏所有默认复制按钮 */
+.vp-code-copy {
+  display: none !important;
+}
+/* language- vp-adaptive-theme */
+.vp-adaptive-theme {
+  display: none !important;
+}

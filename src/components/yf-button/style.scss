@@ -1,14 +1,126 @@
-.my-button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  background-color: #409EFF;
+@import "../../style/variables.scss";
+// @use '../../style/variables.scss' as *;
+.yf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: $--padding-base $--spacing-base;
+  font-size: $--font-size-base;
+  font-family: $--font-family-base;
+
+  border: 1px solid transparent;
+  border-radius: $--border-radius-base;
   cursor: pointer;
-  &.danger {
-    background-color: #F56C6C;
+
+  transition: $--transition-base;
+  box-shadow: none;
+  margin-right: $--margin-base;
+  
+  // 禁用态
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
   }
-  &.default {
-    background-color: #909399;
+
+  // 尺寸
+  &--medium {
+    font-size: $--font-size-base;
+    padding: $--padding-base $--spacing-base;
+  }
+
+  &--small {
+    font-size: $--font-size-small;
+    padding: 6px 10px;
+  }
+
+  &--mini {
+    font-size: $--font-size-mini;
+    padding: 4px 8px;
+  }
+
+  // 圆角
+  &.is-round {
+    border-radius: 20px;
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+
+  // 默认样式
+  &--default {
+    background-color: #fff;
+    border-color: #dcdfe6;
+    color: $--color-text;
+  }
+
+  // 类型样式
+  &--primary {
+    background-color: $--color-primary;
+    border-color: $--color-primary;
+    color: #fff;
+  }
+
+  &--success {
+    background-color: $--color-success;
+    border-color: $--color-success;
+    color: #fff;
+  }
+
+  &--warning {
+    background-color: $--color-warning;
+    border-color: $--color-warning;
+    color: #fff;
+  }
+
+  &--danger {
+    background-color: $--color-danger;
+    border-color: $--color-danger;
+    color: #fff;
+  }
+
+  &--info {
+    background-color: $--color-info;
+    border-color: $--color-info;
+    color: #fff;
+  }
+
+  // plain 模式
+  &.is-plain {
+    &.yf-button--primary {
+      background-color: rgba($--color-primary, 0.1);
+      border-color: $--color-primary;
+      color: $--color-primary;
+    }
+
+    &.yf-button--success {
+      background-color: rgba($--color-success, 0.1);
+      border-color: $--color-success;
+      color: $--color-success;
+    }
+
+    &.yf-button--warning {
+      background-color: rgba($--color-warning, 0.1);
+      border-color: $--color-warning;
+      color: $--color-warning;
+    }
+
+    &.yf-button--danger {
+      background-color: rgba($--color-danger, 0.1);
+      border-color: $--color-danger;
+      color: $--color-danger;
+    }
+
+    &.yf-button--info {
+      background-color: rgba($--color-info, 0.1);
+      border-color: $--color-info;
+      color: $--color-info;
+    }
   }
 }

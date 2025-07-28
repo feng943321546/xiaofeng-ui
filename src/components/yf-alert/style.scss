@@ -1,22 +1,91 @@
-.my-alert {
-  padding: 10px 15px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  color: #fff;
+@import "../../style/variables.scss";
+// @use '../../style/variables.scss' as *;
+.yf-alert {
+    position: relative;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: flex;
+    // align-items: flex-start;
+    align-items: center;
+    font-size: $--font-size-base;
+    margin-top: $--margin-base;
 
-  &.success {
-    background-color: #67C23A;
-  }
+    &__icon {
+        margin-right: $--margin-base;
+        font-size: $--font-icon-base;
+        line-height: 1;
+    }
 
-  &.warning {
-    background-color: #E6A23C;
-  }
+    &__title {
+        font-weight: 700;
+        margin-bottom: 4px;
+        display: block;
+    }
 
-  &.error {
-    background-color: #F56C6C;
-  }
+    &__message {
+        margin: 0;
+        line-height: 1.5;
+    }
 
-  &.info {
-    background-color: #909399;
-  }
+    &__close {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    // 主题色块（纯色）
+    &--success {
+        background-color: $--color-success;
+        border-color: $--color-success;
+        color: #fff;
+    }
+    &--warning {
+        background-color: $--color-warning;
+        border-color: $--color-warning;
+        color: #fff;
+    }
+    &--error {
+        background-color: $--color-danger;
+        border-color: $--color-danger;
+        color: #fff;
+    }
+    &--info {
+        background-color: $--color-info;
+        border-color: $--color-info;
+        color: #fff;
+    }
+
+    // plain 模式（透明背景 + 彩色边框 + 彩色字体）
+    &.is-plain {
+        &.yf-alert--success {
+            background-color: rgba($--color-success, 0.1);
+            border-color: $--color-success;
+            color: $--color-success;
+        }
+        &.yf-alert--warning {
+            background-color: rgba($--color-warning, 0.1);
+            border-color: $--color-warning;
+            color: $--color-warning;
+        }
+        &.yf-alert--error {
+            background-color: rgba($--color-danger, 0.1);
+            border-color: $--color-danger;
+            color: $--color-danger;
+        }
+        &.yf-alert--info {
+            background-color: rgba($--color-info, 0.1);
+            border-color: $--color-info;
+            color: $--color-info;
+        }
+
+        .yf-alert__close {
+            color: inherit;
+        }
+    }
 }

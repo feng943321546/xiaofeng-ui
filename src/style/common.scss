@@ -1,0 +1,36 @@
+// padding margin
+@for $value from 1 through 200{
+  .pd-#{$value}, .ptb-#{$value}, .pt-#{$value} { padding-top: $value*1px; }
+  .pd-#{$value}, .ptb-#{$value}, .pb-#{$value} { padding-bottom: $value*1px; }
+  .pd-#{$value}, .plr-#{$value}, .pl-#{$value} { padding-left: $value*1px; }
+  .pd-#{$value}, .plr-#{$value}, .pr-#{$value} { padding-right: $value*1px; }
+  .mg-#{$value}, .mtb-#{$value}, .mt-#{$value} { margin-top: $value*1px; }
+  .mg-#{$value}, .mtb-#{$value}, .mb-#{$value} { margin-bottom: $value*1px; }
+  .mg-#{$value}, .mlr-#{$value}, .ml-#{$value} { margin-left: $value*1px; }
+  .mg-#{$value}, .mlr-#{$value}, .mr-#{$value} { margin-right: $value*1px; }
+}
+
+@for $value from 1 through 800{
+  .size-#{$value}{ font-size: $value*1px; }
+  .width-#{$value}{ width: $value*1px; }
+  .height-#{$value}{ height: $value*1px; }
+  // 宽高 *10
+  .wd10-#{$value}{ width: $value*10px; }
+  .hg10-#{$value}{ height: $value*10px; }
+}
+
+// radius
+@for $value from 5 through 50{
+  .radius-#{$value}{ border-radius: $value*1px; }
+  // 顶部圆角
+  .radius-tlr-#{$value}{ border-radius: $value*1px $value*1px 0 0; }
+  .radius-blr-#{$value}{ border-radius: 0 0 $value*1px $value*1px; }
+}
+
+// 定义flex等分
+@for $i from 0 through 12 {
+	.f-flex-#{$i} { flex: $i; }
+	.weight-#{$i} { font-weight: $i*100; }
+	// .opacity-#{$i} { opacity:$i/10}
+}
+

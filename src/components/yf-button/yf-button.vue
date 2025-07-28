@@ -1,24 +1,56 @@
 <template>
-  <button class="my-button" :class="type" @click="$emit('click')">
-    <slot />
-  </button>
+    <button
+        class="yf-button"
+        :class="[
+            `yf-button--${type}`,
+            `yf-button--${size}`,
+            {
+                'is-plain': plain,
+                'is-disabled': disabled,
+                'is-round': round,
+                'is-circle': circle,
+            },
+        ]"
+        :disabled="disabled"
+        @click="handleClick">
+        <!-- 图标插槽 -->
+        <span v-if="$slots.icon" class="yf-button__icon">
+            <slot name="icon" />
+        </span>
+        <!-- 默认插槽（按钮文字） -->
+        <span v-if="$slots.default">
+            <slot />
+        </span>
+    </button>
 </template>
 
 <script lang="ts" setup>
-// 定义组件名称
-defineOptions({
-  name: 'YfButton'
-})
+    defineOptions({ name: "YfButton" });
 
-// ✅ 使用类型声明 props
-const props = defineProps<{
-  type?: 'primary' | 'danger' | 'default'
-}>()
+    const emit = defineEmits(["click"]);
 
-// ✅ 使用类型声明 emits
-const emit = defineEmits<{
-  (e: 'click'): void
-}>()
+    const props = defineProps({
+        // type: {
+        //     type: String as () => "primary" | "success" | "warning" | "danger" | "info",
+        //     default: "primary",
+        // },
+        // size: {
+        //     type: String as () => "large" | "default" | "small",
+        //     default: "default",
+        // },
+        type: { type: String, default: "default" },
+        size: { type: String, default: "small" },
+        plain: { type: Boolean, default: false },
+        disabled: { type: Boolean, default: false },
+        round: { type: Boolean, default: false },
+        circle: { type: Boolean, default: false },
+    });
+
+    function handleClick(event: MouseEvent) {
+        if (!props.disabled) emit("click", event);
+    }
 </script>
 
-<style scoped src="./style.scss" />
+<style lang="scss" scoped>
+    @use "./style.scss";
+</style>

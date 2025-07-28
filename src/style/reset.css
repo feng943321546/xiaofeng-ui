@@ -1,0 +1,69 @@
+/* 小沣样式库  重置样式代码库 */
+[v-cloak]{opacity: 0;}
+* { list-style:none; margin:0; padding:0; outline:0; -webkit-box-sizing:border-box; box-sizing:border-box; appearance:initial; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+*,:after,:before{ box-sizing:border-box; }
+*:link,*:visited,*:hover,*:active  { -webkit-tap-highlight-color:rgba(0,0,0,0); }
+a:active, a:hover { text-decoration:none; }
+a:focus { outline:none; }
+:focus { outline:0; text-decoration:none; }
+a:focus { outline:0; text-decoration:none; color:inherit; }
+button { cursor:pointer; }
+img,video { max-width:100%; height:auto; }
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,address,em,img,ol,ul,li,fieldset,form,label,legend,table,tbody,tfoot,thead,tr,th,td,i,b,s{
+  margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-family:"Microsoft YaHei,Helvetica,Arial,PingFang SC, San Francisco, Heiti SC, 黑体-简"; word-break: break-all;
+}
+span,i,em,big,small,b,strong { font-size:inherit; font-weight:normal; font-style:normal; }
+
+html, body { min-height:100%; overflow:visible; position: relative;height: auto; }
+html { background:#f5f5f5; }
+/* 第二份 */
+select{appearance: none;-webkit-appearance: none;-ms-appearance: none;-moz-appearance: none;background-color: transparent;}
+ul,ol{list-style:none}
+a img{border:none;}
+a,a:link{text-decoration:none;color: #333}
+button{overflow:visible;padding:0;margin:0;border:0 none;background-color:transparent;appearance: none;-webkit-appearance:none;}
+button::-moz-focus-inner{padding:0}
+textarea,input{background:none;padding:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
+input[type=number]{appearance: none;-webkit-appearance: none; border: 0;}
+input[type=search]{appearance: none;-webkit-appearance: none; border: 0;}
+input[type=text]{appearance: none;-webkit-appearance: none; border: 0;}
+input[type=tel]{appearance: none;-webkit-appearance: none; border: 0;}
+input[type=button]{appearance: none;-webkit-appearance: none;}
+input[type=password]{-webkit-text-security:disc;appearance: none;-webkit-appearance: none; border: 0;}
+input[type=submit]{appearance: none;-webkit-appearance: none; border: 0;}
+textarea:focus,input:focus,button:focus{outline:none}
+
+
+input::placeholder,textarea::placeholder,
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder,
+input::-moz-placeholder,textarea::-moz-placeholder,
+input,input[type=radio],input[type=checkbox] {font-size:14px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color:#222; }
+button,textarea,input[type=text],input[type=tel],input[type=email],input[type=address],input[type=file],input[type=password] { border-radius:0; font-family:PingFang SC, San Francisco, Heiti SC, 黑体-简, Helvetica; font-size:14px; -webkit-appearance:initial; appearance:initial; background:none; box-shadow:none; border:0; color:#222; }
+textarea:focus,input[type=text]:focus,input[type=tel]:focus,input[type=password]:focus,input[type=email]:focus,input[type=address]:focus,textarea:hover,input[type=text]:hover,input[type=tel]:hover,input[type=email]:hover,input[type=address]:hover { border-color:#FFBD00; color:#222; }
+input:disabled,input[disabled],textarea:disabled,textarea[disabled] { background:#ccc; cursor:not-allowed; color:#555; }
+
+
+
+.font-yahei{font-family: "Microsoft YaHei";}
+.scrollbarchange::-webkit-scrollbar {
+  /* 滚动条整体样式*/
+  width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+  position: absolute;
+  right: 0px;
+}
+.scrollbarchange::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  background: #e0e0e0;
+}
+.scrollbarchange::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 10px;
+  background: #f2f2f2;
+}
+
+.hide { display:none; }
+.block { display:block; }
+.bold { font-weight:bold; }
+.pointer { cursor: pointer; }

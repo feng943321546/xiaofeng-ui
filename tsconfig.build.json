@@ -15,8 +15,8 @@
         "paths": {
             "@/*": ["src/*"],
             "@docs/*": ["docs/*"],
-            "@demos/*": ["demos/*"],
-            "@components/*": ["components/*"]
+            "@demos/*": ["docs/demos/*"],
+            "@components/*": ["src/components/*"]
         },
         "module": "ESNext",
         "target": "ESNext", // 编译目标

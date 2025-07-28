@@ -1,0 +1,60 @@
+/* src/style/variables.scss */
+
+/* Theme Colors */
+$--color-primary: #078bf9;
+$--color-success: #07bdb9;
+$--color-warning: #f1a100;
+$--color-danger: #fa6767;
+$--color-info: #909399;
+// $--color-primary: #078BF9 !default;
+// $--color-success: #07BDB9 !default;
+// $--color-warning: #F1A100 !default;
+// $--color-danger: #FA6767 !default;
+// $--color-info: #909399 !default;
+
+
+/* Spacing */
+$--spacing-base: 12px;
+
+/* Padding */
+$--padding-base: 12px;
+
+/* Margin */
+$--margin-base: 12px;
+
+/* Color Variables */
+$--color-text: #333;
+$--color-text-light: #666;
+
+/* Font Sizes */
+$--font-size-base: 14px;
+$--font-size-large: 16px;
+$--font-size-small: 14px;
+$--font-size-mini: 12px;
+$--font-icon-base: 18px;
+
+
+/* Font Family */
+$--font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+
+/* Border Radius */
+$--border-radius-base: 4px;
+
+
+/* Transition */
+$--transition-base: all 0.3s;
+
+/* Box Shadow */
+$--box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+/* Export variables for use in other files */
+// @use 'sass:meta';
+// :export {
+//     theme: $--color-primary;
+//     color-primary: $--color-primary;
+//     color-success: $--color-success;
+//     color-warning: $--color-warning;
+//     color-danger: $--color-danger;
+//     color-info: $--color-info;
+//     font-size-base: $--font-size-base;
+// }

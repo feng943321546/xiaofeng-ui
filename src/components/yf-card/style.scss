@@ -1,0 +1,42 @@
+@import "../../style/variables.scss";
+// @use '../../style/variables.scss' as *;
+
+.yf-card {
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #ebeef5;
+  box-sizing: border-box;
+  transition: 0.3s;
+  padding: 20px;
+
+  &.is-always-shadow {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &.is-hover-shadow {
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &.is-never-shadow {
+    box-shadow: none;
+  }
+
+  &__header {
+    font-size: 16px;
+    font-weight: 500;
+    color: #303133;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ebeef5;
+  }
+
+  &__body {
+    padding-top: 18px;
+    font-size: 14px;
+    color: #606266;
+  }
+}
+

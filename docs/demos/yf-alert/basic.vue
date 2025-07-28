@@ -1,15 +1,13 @@
 <template>
-    <yf-alert type="success">成功提示</yf-alert>
-    <yf-alert type="info">信息提示</yf-alert>
-    <yf-alert type="warning">警告提示</yf-alert>
-    <yf-alert type="error">错误提示</yf-alert>
+    <!-- 成功提示 -->
+    <yf-alert type="success" message="操作成功提示" />
+
+    <!-- 信息提示 -->
+    <yf-alert type="info" message="普通信息提示" />
+
+    <!-- 警告提示 -->
+    <yf-alert type="warning" message="警告信息提示" />
+
+    <!-- 错误提示 -->
+    <yf-alert type="error" message="错误信息提示" />
 </template>
-
-<script setup lang="ts">
-    import { ref } from "vue";
-
-    const handleClick = (nameType: string) => {
-        console.log(`${nameType} 被点击了`);
-    };
-</script>
-<style scoped></style>

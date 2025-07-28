@@ -1,0 +1,47 @@
+@import "../../style/variables.scss";
+// @use '../../style/variables.scss' as *;
+
+
+.yf-message-box-mask {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+  .yf-message-box {
+    background: white;
+    border-radius: $--border-radius-base;
+    padding: 16px;
+    width: 300px;
+
+    .header {
+      font-size: $--font-size-large;
+      margin-bottom: 8px;
+    }
+
+    .content {
+      margin-bottom: 16px;
+
+      input {
+        width: 100%;
+        padding: 6px;
+        margin-top: 8px;
+        border: 1px solid #ddd;
+      }
+    }
+
+    .footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+
+      button {
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -2,10 +2,20 @@ import type { App } from 'vue'
 
 import YfAlert from './yf-alert'
 import YfButton from './yf-button'
+import YfCard from './yf-card'
+import YfIcon from './yf-icon'
+import YfInput from './yf-input'
+import YfMessage from './yf-message'
+import YfMessageBox from './yf-message-box'
 
 const components = [
   YfAlert,
-  YfButton
+  YfButton,
+  YfCard,
+  YfIcon,
+  YfInput,
+  YfMessage,
+  YfMessageBox
 ]
 
 const install = (app: App): void => {
@@ -23,5 +33,10 @@ export default {
 
 export {
   YfAlert,
-  YfButton
+  YfButton,
+  YfCard,
+  YfIcon,
+  YfInput,
+  YfMessage,
+  YfMessageBox
 }

@@ -2,7 +2,7 @@ const fg = require('fast-glob')
 const fs = require('fs')
 const path = require('path')
 
-const output = path.resolve(__dirname, '../src/style/index.ts')
+const output = path.resolve(__dirname, '../src/style/all.scss')
 
 async function generate() {
   const files = await fg('src/components/**/style.scss', {
@@ -15,13 +15,15 @@ async function generate() {
   }
 
   const content = files
-    // .map(file => `import '../${file.replace(/\\/g, '/')}'`)
-    .map(file => `import '../${file.replace(/^src\//, '').replace(/\\/g, '/')}'`)
+    .map(file => {
+      const name = path.basename(path.dirname(file)) // 取组件名
+      return `@use "../${file.replace(/^src\//, '').replace(/\\/g, '/')}" as ${name};`
+    })
     .join('\n')
 
   fs.writeFileSync(output, content + '\n', 'utf-8')
 
-  console.log(`✅ 成功生成 src/style/index.ts，包含 ${files.length} 个组件样式`)
+  console.log(`✅ 成功生成 src/style/all.scss，包含 ${files.length} 个组件样式`)
 }
 
 generate()

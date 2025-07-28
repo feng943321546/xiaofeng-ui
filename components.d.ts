@@ -11,5 +11,10 @@ declare module 'vue' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     YfAlert: typeof import('./src/components/yf-alert/yf-alert.vue')['default']
     YfButton: typeof import('./src/components/yf-button/yf-button.vue')['default']
+    YfCard: typeof import('./src/components/yf-card/yf-card.vue')['default']
+    YfIcon: typeof import('./src/components/yf-icon/yf-icon.vue')['default']
+    YfInput: typeof import('./src/components/yf-input/yf-input.vue')['default']
+    YfMessage: typeof import('./src/components/yf-message/yf-message.vue')['default']
+    YfMessageBox: typeof import('./src/components/yf-message-box/yf-message-box.vue')['default']
   }
 }

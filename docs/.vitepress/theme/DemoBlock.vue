@@ -1,81 +1,69 @@
 <template>
     <div class="demo-block">
-        <!-- 渲染示例 -->
         <div class="demo-render">
-            <component v-if="demoComponent" :is="demoComponent" />
+            <component v-if="DemoComponent" :is="DemoComponent" />
         </div>
-
-        <!-- 分割线 -->
         <div class="demo-divider"></div>
-
-        <!-- 源码区 -->
         <div class="demo-meta">
             <div class="demo-meta-header">
-                <button class="copy-btn" @click="copyCode">复制代码</button>
+                <button class="copy-btn" @click="copy">复制代码</button>
                 <button class="toggle-btn" @click="visible = !visible">
                     {{ visible ? "隐藏代码" : "显示代码" }}
                 </button>
             </div>
+            <!-- <div v-show="visible" class="demo-source">
+                <div class="code-view">{{ sourceCode }}</div>
+            </div> -->
             <div v-show="visible" class="demo-source">
-                <pre><code>{{ source }}</code></pre>
+                <!-- <div class="contentClass" v-show="content">{{ content }}</div> -->
+                <pre><code>{{ sourceCode }}</code></pre>
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    import { ref, shallowRef, onMounted } from "vue";
+    import { ref, computed } from "vue";
+    // import rawCode from '../../demos/yf-alert/basic.vue?raw'
+    // console.log('代码内容：', rawCode)
 
     const props = defineProps<{
-        demoPath: string;
+        src: string; // 例如：'yf-alert/basic'
+        content?: string;
     }>();
 
-    const visible = ref(false);
-    const source = ref("");
-    const demoComponent = shallowRef(null);
-    let t = "yf-";
-    // const demoMap = {
-    //   [t+'button/basic']: () => import('../demos/yf-button/basic.vue'),
-    //   // 可以继续加：'button/xxx': () => import(...)
-    // }
-    // 1. 显式列出可用 demo
-    const demoMap: Record<string, () => Promise<any>> = {
-        "yf-button/basic": () => import("@demos/yf-button/basic.vue"),
-        "yf-alert/basic": () => import("@demos/yf-alert/basic.vue"),
-        // 更多 demo 可以继续扩展
-    };
+    const demos = import.meta.glob("../../demos/**/*.vue", { eager: true, query: "?component" });
+    const sources = import.meta.glob("../../demos/**/*.vue", { eager: true, query: "?raw" });
+    const demoPath = computed(() => `../../demos/${props.src}.vue`); // 构造完整路径 当前正在使用的组件
 
-    onMounted(async () => {
-        try {
-            console.log("props.demoPath ==>", props.demoPath);
-
-            // 动态导入组件
-            // demoComponent.value = (await import(`../demos/${props.demoPath}.vue`)).default
-            // console.log('demoComponent ==>', demoComponent);
-
-            const loader = demoMap[props.demoPath];
-            console.log("loader ==>", loader);
-            if (!loader) {
-                source.value = `未找到 demo: ${props.demoPath}`;
-                return;
-            }
-            demoComponent.value = (await loader()).default;
-
-            // 获取源码
-            const res = await fetch(`/docs/demos/${props.demoPath}.vue`);
-            console.log("获取源码 res ==>", res);
-            source.value = await res.text();
-        } catch (error) {
-            source.value = `加载源码失败：${error}`;
-        }
+    // 显示使用的组件
+    const DemoComponent = computed(() => {
+        return demos[demoPath.value]?.default || null;
     });
+    // 显示的字符串源码
+    const sourceCode = computed(() => {
+        return sources[demoPath.value].default || "⚠️ 未找到源码";
+    });
+    // console.log("模板字符串的内容显示 ==>", sourceCode.value);
 
-    const copyCode = async () => {
-        await navigator.clipboard.writeText(source.value);
-        alert("复制成功！");
+    const visible = ref(false);
+    const copy = async () => {
+        await navigator.clipboard.writeText(sourceCode.value);
+        alert("已复制源码");
     };
 </script>
+
 <style scoped>
+    /* .code-view {
+        background-color: #f5f7fa;
+        border-radius: 4px;
+        padding: 12px;
+        overflow-x: auto;
+        font-family: monospace;
+        font-size: 13px;
+        white-space: pre;
+    } */
+
     .demo-block {
         border: 1px solid #e4e7ed;
         border-radius: 6px;
@@ -90,7 +78,7 @@
         border-top: 1px dashed #dcdfe6;
     }
     .demo-meta {
-        background-color: #f9fafc;
+        /* background-color: #f9fafc; */
         padding: 12px 16px;
     }
     .demo-meta-header {
@@ -99,12 +87,18 @@
         gap: 10px;
         font-size: 13px;
     }
+    .contentClass {
+        padding: 16px;
+        background-color: #efefef;
+        border-radius: 5px;
+    }
     .copy-btn,
     .toggle-btn {
         border: none;
         background: none;
         color: #409eff;
         cursor: pointer;
+        font-size: 12px;
         padding: 0;
     }
     .copy-btn:hover,
@@ -112,9 +106,9 @@
         text-decoration: underline;
     }
     .demo-source {
-        background-color: #f5f7fa;
+        /* background-color: #f5f7fa; */
         border-radius: 4px;
-        padding: 12px;
+        /* padding: 12px; */
         overflow-x: auto;
         font-family: monospace;
         font-size: 13px;

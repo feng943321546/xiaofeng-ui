@@ -1,11 +1,11 @@
 {
-  "name": "my-ui-xiaofeng",
-  "version": "1.0.0",
+  "name": "xiaofeng-ui",
+  "version": "1.0.5",
   "description": "A Vue 3 UI component library built with TypeScript",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
-  "types": "dist/entry-types/index.d.ts",
+  "types": "dist/types/entry.es.d.ts",
   "sideEffects": false,
   "files": [
     "dist"
@@ -24,15 +24,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/feng943321546/my-ui-library.git"
+    "url": "https://github.com/feng943321546/xiaofeng-ui.git"
   },
-  "homepage": "https://github.com/feng943321546/my-ui-library#readme",
+  "homepage": "https://github.com/feng943321546/xiaofeng-ui#readme",
   "bugs": {
-    "url": "https://github.com/feng943321546/my-ui-library/issues"
+    "url": "https://github.com/feng943321546/xiaofeng-ui/issues"
   },
   "exports": {
     ".": {
-      "types": "./dist/entry-types/index.d.ts",
+      "types": "./dist/types/entry.es.d.ts",
       "import": "./dist/index.es.js",
       "require": "./dist/index.cjs.js"
     },
@@ -40,8 +40,8 @@
       "import": "./dist/style/index.css"
     },
     "./components/*": {
-      "import": "./dist/es/components/*.js",
-      "types": "./dist/entry-types/components/*.d.ts"
+      "import": "./dist/es/components/**/*.js",
+      "types": "./dist/types/components/*.d.ts"
     }
   },
   "scripts": {
@@ -76,6 +76,7 @@
     "cpx": "^1.5.0",
     "fast-glob": "^3.3.3",
     "gh-pages": "^6.3.0",
+    "prismjs": "^1.30.0",
     "rimraf": "^6.0.1",
     "rollup": "^4.44.2",
     "rollup-plugin-css-only": "^4.5.2",
