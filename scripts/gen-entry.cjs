@@ -18,11 +18,23 @@ function upperCamelCase(str) {
 
 const imports = componentNames.map((name) => `import ${upperCamelCase(name)} from './${name}'`).join("\n");
 
+
+// 自动导入 method.ts（如果存在）
+const methodImports = componentNames
+  .map((name) => {
+    const methodPath = path.resolve(componentsDir, name, "method.ts");
+    if (fs.existsSync(methodPath)) {
+      return `export * from './${name}/method'`;
+    }
+    return null;
+  })
+  .filter(Boolean)
+  .join("\n");
+
 const exportBlock = `export {\n  ${componentNames.map(upperCamelCase).join(",\n  ")}\n}`;
 
 const installList = componentNames.map((name) => `${upperCamelCase(name)}`).join(",\n  ");
 
-// const content = `${imports}
 const content = `import type { App } from 'vue'
 ${imports ? "\n" + imports : ""}
 
@@ -44,7 +56,8 @@ export default {
 }
 
 ${exportBlock}
+${methodImports}
 `;
 
 fs.writeFileSync(output, content);
-console.log("✅ 已生成 src/components/index.ts");
+console.log("✅ 已生成 src/components/index.ts,包括组件默认导出和 method.ts 扩展导出");

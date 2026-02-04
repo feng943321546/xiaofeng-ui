@@ -1,8 +1,8 @@
-@import "../../style/variables.scss";
+@import "../../style/variables";
 // @use '../../style/variables.scss' as *;
 .yf-alert {
     position: relative;
-    padding: 12px 20px;
+    padding: $--padding-base-tb $--padding-base-lr;
     border: 1px solid transparent;
     border-radius: 4px;
     display: flex;

@@ -9,7 +9,7 @@ import cssOnly from 'rollup-plugin-css-only'
 const resolve = (p: string) => path.resolve(__dirname, p)
 
 // 组件库入口文件（src/index.ts 中统一导出）
-const entry = resolve('./src/index.ts')
+const entry = resolve('./src/components/index.ts')
 
 // 公共配置
 // 不把 Vue 打包进去，减小体积
@@ -18,13 +18,14 @@ const external = ['vue']
 // 输出格式：ESM   构建 ES Module 格式（Tree Shaking 友好）
 const esBuild = defineConfig({
   plugins: [vue()],
+  publicDir: false, // 👈 禁止复制 public 文件夹内容
   build: {
+    outDir: 'dist/es',
     lib: {
       entry,
       formats: ['es'],
       fileName: 'index',
     },
-    outDir: 'dist/es',
     rollupOptions: {
       external,
       output: {

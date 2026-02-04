@@ -1,0 +1,94 @@
+@import "../../style/variables";
+// @use '../../style/variables.scss' as *;
+
+// 主题色映射
+$types: (
+        primary: $--color-primary,
+        success: $--color-success,
+        warning: $--color-warning,
+        danger: $--color-danger,
+        info: $--color-info
+);
+
+.yf-tag {
+  padding: 0 26px 0 10px;
+  font-size: $--font-size-small;
+  line-height: 24px;
+  border-radius: $--border-radius-base;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  color: $--color-white;
+  transition: $--transition-base;
+  position: relative;
+  background-color: map-get($types, info);
+
+  display: flex;
+  align-items: center;
+  &.plain {
+    background-color: rgba(map-get($types, info), 0.1);
+    color: map-get($types, info);
+    border-color: map-get($types, info);
+  }
+
+  &.round {
+    border-radius: 12px;
+  }
+
+  &.hit {
+    border: 1px dashed currentColor;
+  }
+
+  .yf-tag__close {
+    font-size: 16px;
+    cursor: pointer;
+    //margin-left: 4px;
+    //position: absolute;
+    //top: 2px;
+    //right: 4px;
+    color: inherit;
+    height: 16px;
+    width: 16px;
+    line-height: 14px;
+    text-align: center;
+    position: absolute;
+    right: 6px;
+    &:hover {
+      //color:map-get($types, danger);
+      //color: rgba(map-get($types, info), 0.1);
+      color: map-get($types, info);
+      //background-color:map-get($types, info);
+      border-radius:50%;
+      background-color:$--color-white;
+    }
+  }
+
+
+  @each $key, $color in $types {
+    &.#{$key} {
+      background-color: $color;
+
+      &.plain {
+        background-color: rgba($color, 0.1);
+        color: $color;
+        border-color: $color;
+        .yf-tag__close {
+          color: map-get($types, $color);
+          height: 16px;
+          width: 16px;
+          line-height: 14px;
+          text-align: center;
+          position: absolute;
+          right: 6px;
+          &:hover {
+            //color: rgba(map-get($types, info), 0.1);
+            color: $--color-white;
+            background-color:map-get($types, $key);
+            border-radius:50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+

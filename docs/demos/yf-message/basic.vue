@@ -9,9 +9,8 @@
 </template>
 
 <script setup lang="ts">
-// import { showMessage } from 'xiaofeng-ui'
-import { showMessage } from '@/components/yf-message';
-
+import { showMessage } from 'xiaofeng-ui'
+// import { showMessage } from '@/components/yf-message'; // 组件开发博主使用的
 
 function show(type: 'primary' | 'success' | 'warning' | 'danger' | 'info') {
   showMessage({

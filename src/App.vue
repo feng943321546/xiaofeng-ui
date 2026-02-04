@@ -8,12 +8,12 @@
         <div>
             <yf-input v-model="inputValue" placeholder="请输入内容" />
         </div>
-        <div class="mt-20">
+        <!-- <div class="mt-20">
             <yf-icon name="el-icon-search" size="20" color="#078bf9">
                 <Edit style="width: 60px; height: 60px" />
             </yf-icon>
             <i class="el-icon-search width-50 height-50"></i>
-        </div>
+        </div> -->
         <div class="mt-20">
             <yf-icon size="80" color="#fa6767">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M128 544h768a32 32 0 1 0 0-64H128a32 32 0 0 0 0 64"></path></svg>
@@ -37,7 +37,7 @@
         </div>
         <div class="mt-20">
             <yf-button type="primary" @click="handleClick('主要按钮')">主要按钮111111111</yf-button>
-            <yf-button type="danger">危险按钮222222222</yf-button>
+            <yf-button type="danger" @click="handleTest">危险按钮222222222</yf-button>
             <yf-button type="info">默认按钮333333333</yf-button>
         </div>
         <div class="mt-20">
@@ -64,7 +64,8 @@
 </template>
 <script lang="ts" setup>
     import { ref } from "vue";
-    import { showMessage } from "./components/yf-message";
+    import { showMessage } from "./components/yf-message/method";
+    import { showMessageBox } from "./components/yf-message-box/method";
 
     // import { showMessage } from "my-ui-xiaofeng";
     const inputValue = ref("初始值");
@@ -84,6 +85,22 @@
         //     onClose: () => console.log("关闭了"),
         // });
     };
+    function handleTest() {
+        showMessageBox({
+            type: "warning",
+            title: "警告",
+            message: "你确定要删除这个文件吗？",
+            confirmButtonText: "确认",
+            cancelButtonText: "取消",
+						closeOnClickModal: true,
+        })
+            .then(() => {
+                console.log("用户点击了确认");
+            })
+            .catch(() => {
+                console.log("用户点击了取消");
+            });
+    }
     function handleClose() {
         console.log("Alert 被关闭了");
     }

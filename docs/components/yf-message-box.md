@@ -4,7 +4,8 @@
 
 ## 基础用法
 
-<DemoBlock src="yf-message-box/basic" content="组件使用的基本使用" />
+<DemoBlock src="yf-message-box/basic"  />
+<DemoBlock src="yf-message-box/slot" />
 
 
 <script setup>

@@ -1,25 +1,24 @@
-<template>
-  <yf-button @click="show = true">打开确认框</yf-button>
-  <yf-message-box
-    :visible="show"
-    title="提示"
-    message="是否确认操作？"
-    type="confirm"
-    @confirm="onConfirm"
-    @cancel="onCancel"
-  />
-</template>
+<template >
+	<yf-button type="primary" @click="open" >打开弹框</yf-button >
+</template >
 
-<script setup lang="ts">
-import { ref } from 'vue';
-
-const show = ref(false);
-const onConfirm = () => {
-  show.value = false;
-  console.log("确认操作");
-};
-const onCancel = () => {
-  show.value = false;
-  console.log("取消操作");
-};
-</script>
+<script setup lang="ts" >
+import {showMessageBox} from 'xiaofeng-ui'
+// import { showMessageBox } from "@components/yf-message-box"; // 组件开发博主使用的
+const open = () => {
+	showMessageBox({
+		title: '提示',
+		message: '确定要删除这条记录吗？',
+		type: 'warning',
+		confirmButtonText: '确认',
+		cancelButtonText: '取消',
+		closeOnClickModal: true
+	})
+			.then(() => {
+				console.log('已确认')
+			})
+			.catch(() => {
+				console.log('取消操作')
+			})
+}
+</script >

@@ -1,4 +1,4 @@
-@import "../../style/variables.scss";
+@import "../../style/variables";
 // @use '../../style/variables.scss' as *;
 
 .yf-input {
@@ -12,7 +12,7 @@
 
   .yf-input__inner {
     width: 100%;
-    padding: $--padding-base;
+    padding: $--padding-base-tb $--padding-base-lr;
     font-size: $--font-size-base;
     border: 1px solid $--color-info;
     border-radius: $--border-radius-base;

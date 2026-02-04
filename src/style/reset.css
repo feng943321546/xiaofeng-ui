@@ -21,7 +21,7 @@ select{appearance: none;-webkit-appearance: none;-ms-appearance: none;-moz-appea
 ul,ol{list-style:none}
 a img{border:none;}
 a,a:link{text-decoration:none;color: #333}
-button{overflow:visible;padding:0;margin:0;border:0 none;background-color:transparent;appearance: none;-webkit-appearance:none;}
+button{overflow:visible;padding:0;margin:0;border:0 none;background-color:transparent;appearance: none;-webkit-appearance:none;outline-color:transparent;outline-width: initial}
 button::-moz-focus-inner{padding:0}
 textarea,input{background:none;padding:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
 input[type=number]{appearance: none;-webkit-appearance: none; border: 0;}

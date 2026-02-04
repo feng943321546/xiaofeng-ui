@@ -12,7 +12,7 @@ export default defineConfig({
         lib: {
             entry: path.resolve(__dirname, "src/style/all.scss"),
             // entry: path.resolve(__dirname, "src/style/index.ts"),
-            name: "MyUIStyle",
+            name: "xiaofeng-ui-style",
             fileName: "index",
             formats: ["es"],
         },

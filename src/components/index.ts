@@ -40,3 +40,5 @@ export {
   YfMessage,
   YfMessageBox
 }
+export * from './yf-message/method'
+export * from './yf-message-box/method'

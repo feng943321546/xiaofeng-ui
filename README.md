@@ -1,4 +1,4 @@
-# My UI - XiaoFeng
+# XiaoFeng - UI
 
 基于 Vue 3 + TypeScript 的组件库
 ![npm](https://img.shields.io/npm/v/xiaofeng-ui)
@@ -6,7 +6,7 @@
 
 ## 🔗 文档地址
 
-👉 [在线文档](https://feng943321546.github.io/my-ui-library/)
+👉 [在线文档](https://feng943321546.github.io/xiaofeng-ui/)
 
 ## 📦 安装
 

@@ -1,8 +1,34 @@
+/* .vitepress/theme/style.css*/
+
 /* 隐藏所有默认复制按钮 */
 .vp-code-copy {
-  display: none !important;
+    display: none !important;
 }
+
 /* language- vp-adaptive-theme */
 .vp-adaptive-theme {
-  display: none !important;
+    display: none !important;
+}
+
+
+@media screen and (min-width: 1440px) {
+    .VPSidebar {
+        /* max(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2)) */
+        /*padding-left: 32px !important;*/
+        /*48px 32px*/
+    }
+}
+.container {
+    max-width: 100% !important;
+    /*margin: 0 auto;*/
+    /*padding: 0 32px;*/
+}
+.VPDoc.has-aside .content-container {
+    max-width: 100% !important;
+    /*margin: 0 auto;*/
+    /*padding: 0 32px;*/
+}
+:root {
+    --vp-sidebar-width: 260px;
+    --vp-layout-max-width: 100%;
 }

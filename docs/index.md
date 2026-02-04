@@ -1,6 +1,6 @@
 # XiaoFeng 组件库
 
-这是你正在构建的 Vue 3 + TS 组件库。
+    Vue 3 + TS 组件库。
 
 - 🌱 使用 Composition API
 - 🔧 支持 TS 强类型 Props/Emit

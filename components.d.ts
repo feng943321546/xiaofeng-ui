@@ -14,7 +14,9 @@ declare module 'vue' {
     YfCard: typeof import('./src/components/yf-card/yf-card.vue')['default']
     YfIcon: typeof import('./src/components/yf-icon/yf-icon.vue')['default']
     YfInput: typeof import('./src/components/yf-input/yf-input.vue')['default']
+    YfLoading: typeof import('./src/components/yf-loading/yf-loading.vue')['default']
     YfMessage: typeof import('./src/components/yf-message/yf-message.vue')['default']
     YfMessageBox: typeof import('./src/components/yf-message-box/yf-message-box.vue')['default']
+    YfTag: typeof import('./src/components/yf-tag/yf-tag.vue')['default']
   }
 }
